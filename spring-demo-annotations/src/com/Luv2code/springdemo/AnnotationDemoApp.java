@@ -11,6 +11,7 @@ public class AnnotationDemoApp {
 		Coach theCoach = context.getBean("tennisCoach", Coach.class);
 		//call method
 		System.out.println(theCoach.getDailyWorkout());
+		System.out.println(theCoach.getDailyFortune());
 		//call the context
 		BaskeballCouch theBaskeball = context.getBean("baskeballCouch", BaskeballCouch.class);
 		System.out.println(theBaskeball.getNews());
