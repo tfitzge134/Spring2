@@ -3,13 +3,15 @@ package com.Luv2code.springdemo;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TennisCoach implements Coach {
+public class BaskeballCouch implements Baskeball{
 
 	@Override
-	public String getDailyWorkout() {
+	public String getNews() {
 		// TODO Auto-generated method stub
-		return "Practice Tennis! ";
+		return "hello news";
 	}
+
+
 
 
 }
