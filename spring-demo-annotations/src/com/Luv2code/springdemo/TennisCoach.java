@@ -9,7 +9,8 @@ public class TennisCoach implements Coach {
 	//setup private fiels x fortuneService to be injected
 	//AUTOWIRED APPLY INJECTION TO THE FIELD
 	@Autowired
-	@Qualifier("happyFortuneService")
+	@Qualifier("randomFortuneService")
+//	@Qualifier("happyFortuneService")
 	private FortuneService fortuneService;
 	//define a default constructor to show what spring is doing behind scene
 	public TennisCoach() {
