@@ -1,11 +1,15 @@
 package com.Luv2code.springdemo;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class SwimCoach implements Coach {
 //create private file
+	@Autowired
+	@Qualifier("randomFortuneService")
 	private FortuneService fortuneService;
 	@Value("${foo.email}")
 	private String email;
@@ -13,8 +17,13 @@ public class SwimCoach implements Coach {
 	@Value("${foo.team}")
 	private String team;
 	//create consructor
-	public SwimCoach() {
-		
+	
+	
+	public SwimCoach(FortuneService fortuneService, String email, String team) {
+		super();
+		this.fortuneService = fortuneService;
+		this.email = email;
+		this.team = team;
 	}
 
 	@Override
@@ -37,5 +46,10 @@ public class SwimCoach implements Coach {
 		// TODO Auto-generated method stub
 		return team;
 	}
+public SwimCoach() {
+		
+	}
+
 
 }
+

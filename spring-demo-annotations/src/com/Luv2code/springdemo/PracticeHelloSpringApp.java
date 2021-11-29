@@ -11,7 +11,9 @@ public class PracticeHelloSpringApp {
 						
 				// get the bean from spring container
 				SwimCoach theCoach = context.getBean("swimCoach", SwimCoach.class);
-				
+				FileFortuneService file = context.getBean("fileFortuneService",
+						FileFortuneService.class);
+						
 				// call a method on the bean
 				System.out.println(theCoach.getDailyWorkout());
 						
@@ -21,6 +23,8 @@ public class PracticeHelloSpringApp {
 				// call our new swim coach methods ... has the props values injected
 				System.out.println("email: " + theCoach.getEmail());
 				System.out.println("team: " + theCoach.getTeam());
+				System.out.println(theCoach.getDailyFortune());
+				System.out.println(file.getFortune());
 				
 				// close the context
 				context.close();
